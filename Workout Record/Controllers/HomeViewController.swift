@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
         
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -30,12 +31,11 @@ class HomeViewController: UIViewController {
     }
 }
 
-let cellTitles = ["Hello","Today's Task", "Your Records"]
-
+let sectionTitles = ["Today's Task", "Your Records"]
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return sectionTitles.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +46,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = cellTitles[indexPath.section]
+        
         return cell
     }
     
@@ -54,23 +54,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 200
     }
     
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 40)
-        view.backgroundColor = .systemBackground
-        
-        let headerLabel = UILabel()
-        headerLabel.frame = CGRect(x: 0, y: 30, width: self.view.frame.size.width, height: 40)
-        headerLabel.text = "Hello!"
-        headerLabel.textColor = UIColor.white
-        headerLabel.textAlignment = NSTextAlignment.center
-        view.addSubview(headerLabel)
-        
-        return view
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else {return}
+        header.textLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        header.textLabel?.textColor = .white
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitles[section]
     }
 }
-
