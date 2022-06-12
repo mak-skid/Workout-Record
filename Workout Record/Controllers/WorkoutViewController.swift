@@ -8,27 +8,40 @@
 import UIKit
 
 class WorkoutViewController: UIViewController, UITextFieldDelegate {
+    
+    let screenSize = UIScreen.main.bounds.size
+    let currentType = UILabel()
+    let typeIn = UITextField()
+    var typeState : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
         
-        let screenSize = UIScreen.main.bounds.size
-        
-        
-        let currentType = UILabel()
-        currentType.text = "Now: Bench Press"
+        currentType.text = "Current exercise: \(typeState)"
         currentType.backgroundColor = .gray
         currentType.frame = CGRect(x: 10, y: screenSize.height*0.1, width: screenSize.width-20, height: screenSize.height*0.2)
         currentType.layer.cornerRadius = 10
-
         
+        typeIn.placeholder = "Input the current exercise"
+        typeIn.keyboardType = .default
+        typeIn.clearButtonMode = .always
+        typeIn.borderStyle = .roundedRect
+        typeIn.delegate = self
+        typeIn.frame = CGRect(x: 10, y: screenSize.height*0.3, width: screenSize.width-20, height: screenSize.height*0.1)
+            
+        typeIn.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingDidEndOnExit)
+        
+        
+        /*
         let nextType = UILabel()
         nextType.text = "Next: Seated Rowing"
         nextType.textColor = .white
         nextType.backgroundColor = .systemBackground
         nextType.frame = CGRect(x: 10, y: screenSize.height*0.3, width: screenSize.width-20, height: screenSize.height*0.1)
         nextType.layer.cornerRadius = 10
+        */
         
         let time = UILabel()
         time.text = "00:11"
@@ -44,7 +57,7 @@ class WorkoutViewController: UIViewController, UITextFieldDelegate {
         let title = UILabel()
         title.text = "Rep count: "
         title.textColor = .white
-        title.frame = CGRect(x: 0, y: screenSize.height*0.7, width: screenSize.width/2, height: screenSize.height*0.1)
+        title.frame = CGRect(x: 0, y: screenSize.height*0.7, width: screenSize.width/3, height: screenSize.height*0.1)
         title.textAlignment = .center
         
         let textField = UITextField()
@@ -53,11 +66,20 @@ class WorkoutViewController: UIViewController, UITextFieldDelegate {
         textField.clearButtonMode = .always
         textField.borderStyle = .roundedRect
         textField.delegate = self
-        textField.frame =  CGRect(x: screenSize.width/2, y: screenSize.height*0.7, width: screenSize.width/2, height: screenSize.height*0.1)
+        textField.frame =  CGRect(x: screenSize.width*(1/3), y: screenSize.height*0.7, width: screenSize.width/3, height: screenSize.height*0.1)
         
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
-
+        
+        let saveButton = UIButton()
+        saveButton.setTitle("Save", for: .normal)
+        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.setBackgroundColor(color: .systemBlue, forState: .normal)
+        saveButton.setBackgroundColor(color: .blue, forState: .highlighted)
+        saveButton.layer.masksToBounds = true
+        saveButton.layer.cornerRadius = screenSize.height*0.05
+        saveButton.frame = CGRect(x: screenSize.width*(2/3)+50, y: screenSize.height*0.7, width: screenSize.height*0.1, height: screenSize.height*0.1)
+        
         
         let buttonStack = UIStackView()
         
@@ -73,7 +95,6 @@ class WorkoutViewController: UIViewController, UITextFieldDelegate {
                 button.setBackgroundColor(color: .systemGray2, forState: .highlighted)
                 button.layer.masksToBounds = true
                 button.layer.cornerRadius = screenSize.height*0.04
-                //button.frame.size = CGSize(width: screenSize.width / 6 - 5, height: 40)
                 
                 return button
             }()
@@ -84,24 +105,20 @@ class WorkoutViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        /*
-        let stackView = UIStackView(arrangedSubviews: [currentType, nextType, time, repInput, buttonStack])
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.frame = CGRect(x: 0, y: screenSize.height*0.1, width: screenSize.width, height: screenSize.height*0.8)
-        stackView.backgroundColor = .systemBackground
-        stackView.spacing = 10
-        //stackView.translatesAutoresizingMaskIntoConstraints = false
-        //stackView.setContentCompressionResistancePriority(UILayoutPriority.required, for: .vertical)
-        */
         view.addSubview(currentType)
-        view.addSubview(nextType)
+        //view.addSubview(nextType)
+        view.addSubview(typeIn)
         view.addSubview(time)
         view.addSubview(title)
         view.addSubview(textField)
+        view.addSubview(saveButton)
         view.addSubview(buttonStack)
     }
-
+    
+    @objc internal func textFieldDidEndEditing(_ textField: UITextField) {
+        typeState = typeIn.text!
+        print(typeState)
+    }
 }
 
 extension UIButton {
@@ -116,6 +133,4 @@ extension UIButton {
 
         self.setBackgroundImage(colorImage, for: forState)
     }
-    
-    
 }

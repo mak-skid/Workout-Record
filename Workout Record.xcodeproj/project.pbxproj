@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2482BEFB2850891D00B5AC84 /* MenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482BEFA2850891D00B5AC84 /* MenusViewController.swift */; };
+		2482BEFD2854455200B5AC84 /* RecordsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482BEFC2854455200B5AC84 /* RecordsViewTableViewCell.swift */; };
 		24E022AF284F1E4F00976E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E022AE284F1E4F00976E6A /* AppDelegate.swift */; };
 		24E022B1284F1E4F00976E6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E022B0284F1E4F00976E6A /* SceneDelegate.swift */; };
 		24E022B3284F1E4F00976E6A /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E022B2284F1E4F00976E6A /* MainTabBarViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		2482BEFA2850891D00B5AC84 /* MenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenusViewController.swift; sourceTree = "<group>"; };
+		2482BEFC2854455200B5AC84 /* RecordsViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewTableViewCell.swift; sourceTree = "<group>"; };
 		24E022AB284F1E4F00976E6A /* Workout Record.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Record.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E022AE284F1E4F00976E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24E022B0284F1E4F00976E6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				24E022CA284F327200976E6A /* CollectionViewTableViewCell.swift */,
+				2482BEFC2854455200B5AC84 /* RecordsViewTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2482BEFD2854455200B5AC84 /* RecordsViewTableViewCell.swift in Sources */,
 				24E022C8284F277900976E6A /* WorkoutViewController.swift in Sources */,
 				24E022B3284F1E4F00976E6A /* MainTabBarViewController.swift in Sources */,
 				24E022AF284F1E4F00976E6A /* AppDelegate.swift in Sources */,
