@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		246C6C0F2867380E00C54615 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246C6C0E2867380E00C54615 /* CollectionViewTableViewCell.swift */; };
 		2482BEFB2850891D00B5AC84 /* MenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482BEFA2850891D00B5AC84 /* MenusViewController.swift */; };
 		2482BEFD2854455200B5AC84 /* RecordsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482BEFC2854455200B5AC84 /* RecordsViewTableViewCell.swift */; };
+		2482BF002859619400B5AC84 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 2482BEFF2859619400B5AC84 /* SQLite */; };
+		2482BF02285961BE00B5AC84 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482BF01285961BE00B5AC84 /* Database.swift */; };
 		24E022AF284F1E4F00976E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E022AE284F1E4F00976E6A /* AppDelegate.swift */; };
 		24E022B1284F1E4F00976E6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E022B0284F1E4F00976E6A /* SceneDelegate.swift */; };
 		24E022B3284F1E4F00976E6A /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E022B2284F1E4F00976E6A /* MainTabBarViewController.swift */; };
@@ -17,12 +20,13 @@
 		24E022C4284F238400976E6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E022C3284F238400976E6A /* HomeViewController.swift */; };
 		24E022C6284F23C300976E6A /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E022C5284F23C300976E6A /* RecordsViewController.swift */; };
 		24E022C8284F277900976E6A /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E022C7284F277900976E6A /* WorkoutViewController.swift */; };
-		24E022CB284F327200976E6A /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E022CA284F327200976E6A /* CollectionViewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		246C6C0E2867380E00C54615 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewTableViewCell.swift; path = ../../../.Trash/CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		2482BEFA2850891D00B5AC84 /* MenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenusViewController.swift; sourceTree = "<group>"; };
 		2482BEFC2854455200B5AC84 /* RecordsViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewTableViewCell.swift; sourceTree = "<group>"; };
+		2482BF01285961BE00B5AC84 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Database.swift; path = Views/Database.swift; sourceTree = "<group>"; };
 		24E022AB284F1E4F00976E6A /* Workout Record.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Record.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E022AE284F1E4F00976E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24E022B0284F1E4F00976E6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +37,6 @@
 		24E022C3284F238400976E6A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		24E022C5284F23C300976E6A /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		24E022C7284F277900976E6A /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
-		24E022CA284F327200976E6A /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2482BF002859619400B5AC84 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +70,7 @@
 		24E022AD284F1E4F00976E6A /* Workout Record */ = {
 			isa = PBXGroup;
 			children = (
+				2482BF01285961BE00B5AC84 /* Database.swift */,
 				24E022C9284F323100976E6A /* Views */,
 				24E022C2284F22F200976E6A /* Controllers */,
 				24E022AE284F1E4F00976E6A /* AppDelegate.swift */,
@@ -92,8 +97,8 @@
 		24E022C9284F323100976E6A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				24E022CA284F327200976E6A /* CollectionViewTableViewCell.swift */,
 				2482BEFC2854455200B5AC84 /* RecordsViewTableViewCell.swift */,
+				246C6C0E2867380E00C54615 /* CollectionViewTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,6 +119,9 @@
 			dependencies = (
 			);
 			name = "Workout Record";
+			packageProductDependencies = (
+				2482BEFF2859619400B5AC84 /* SQLite */,
+			);
 			productName = "Workout Record";
 			productReference = 24E022AB284F1E4F00976E6A /* Workout Record.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +149,9 @@
 				Base,
 			);
 			mainGroup = 24E022A2284F1E4F00976E6A;
+			packageReferences = (
+				2482BEFE2859619400B5AC84 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = 24E022AC284F1E4F00976E6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,14 +178,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				246C6C0F2867380E00C54615 /* CollectionViewTableViewCell.swift in Sources */,
 				2482BEFD2854455200B5AC84 /* RecordsViewTableViewCell.swift in Sources */,
 				24E022C8284F277900976E6A /* WorkoutViewController.swift in Sources */,
 				24E022B3284F1E4F00976E6A /* MainTabBarViewController.swift in Sources */,
 				24E022AF284F1E4F00976E6A /* AppDelegate.swift in Sources */,
 				2482BEFB2850891D00B5AC84 /* MenusViewController.swift in Sources */,
-				24E022CB284F327200976E6A /* CollectionViewTableViewCell.swift in Sources */,
 				24E022B1284F1E4F00976E6A /* SceneDelegate.swift in Sources */,
 				24E022C6284F23C300976E6A /* RecordsViewController.swift in Sources */,
+				2482BF02285961BE00B5AC84 /* Database.swift in Sources */,
 				24E022C4284F238400976E6A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +381,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2482BEFE2859619400B5AC84 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.13.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2482BEFF2859619400B5AC84 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2482BEFE2859619400B5AC84 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 24E022A3284F1E4F00976E6A /* Project object */;
 }
