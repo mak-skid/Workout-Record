@@ -4,7 +4,7 @@
 //
 //  Created by Ono Makoto on 8/6/2022.
 //
-
+/*
 import UIKit
 
 class MenusViewController: UIViewController {
@@ -17,3 +17,4 @@ class MenusViewController: UIViewController {
     }
 
 }
+*/

@@ -4,7 +4,7 @@
 //
 //  Created by Ono Makoto on 7/6/2022.
 //
-
+/*
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -69,3 +69,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return sectionTitles[section]
     }
 }
+*/
